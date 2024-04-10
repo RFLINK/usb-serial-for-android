@@ -38,6 +38,9 @@ import com.hoho.android.usbserial.util.HexDump;
 import com.hoho.android.usbserial.util.SerialInputOutputManager;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.EnumSet;
 
@@ -277,12 +280,16 @@ public class TerminalFragment extends Fragment implements SerialInputOutputManag
             return;
         }
         try {
-        byte[] data = (str + '\n').getBytes();
+            byte[] data = (str).getBytes();
             SpannableStringBuilder spn = new SpannableStringBuilder();
             spn.append("send " + data.length + " bytes\n");
-            spn.append(HexDump.dumpHexString(data)).append("\n");
+            //spn.append(HexDump.dumpHexString(data)).append("\n");
+            spn.append(new String(data));
             spn.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorSendText)), 0, spn.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             receiveText.append(spn);
+
+
+
             usbSerialPort.write(data, WRITE_WAIT_MILLIS);
         } catch (Exception e) {
             onRunError(e);
@@ -313,6 +320,9 @@ public class TerminalFragment extends Fragment implements SerialInputOutputManag
             //spn.append(HexDump.dumpHexString(data)).append("\n");
             spn.append(new String(data));
         receiveText.append(spn);
+
+
+
     }
 
     void status(String str) {
