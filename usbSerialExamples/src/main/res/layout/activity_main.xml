@@ -11,10 +11,269 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <RelativeLayout
-        android:id="@+id/fragment"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="center">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <TextView
+            android:id="@+id/textHencho"
+            android:layout_width="102dp"
+            android:layout_height="35dp"
+            android:text="変調方式"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textCH"
+            android:layout_width="57dp"
+            android:layout_height="34dp"
+            android:text="CH"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="205dp" />
+
+        <TextView
+            android:id="@+id/textKakusan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拡散率"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="271dp" />
+
+        <TextView
+            android:id="@+id/textTaiiki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="帯域"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="524dp" />
+
+        <TextView
+            android:id="@+id/textSokudo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通信速度"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="642dp" />
+
+        <TextView
+            android:id="@+id/textWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ﾎﾜｲﾄﾆﾝｸﾞ"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="765dp" />
+
+        <TextView
+            android:id="@+id/textShuhasuu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周波数ｸﾞﾙｰﾌﾟ"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="114dp" />
+
+        <RadioGroup
+            android:id="@+id/groupHencho"
+            android:layout_width="197dp"
+            android:layout_height="80dp"
+            tools:layout_editor_absoluteX="202dp"
+            tools:layout_editor_absoluteY="19dp">
+
+            <RadioButton
+                android:id="@+id/radioLoRa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LoRa"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioFSK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FSK/GFSK"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/groupShuha"
+            android:layout_width="186dp"
+            android:layout_height="76dp"
+            tools:layout_editor_absoluteX="202dp"
+            tools:layout_editor_absoluteY="115dp">
+
+            <RadioButton
+                android:id="@+id/radioShuha1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="916.0 - 928.0"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioShuha2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="862.0 - 870.0"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spinnerCH"
+            android:layout_width="192dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="205dp" />
+
+        <RadioGroup
+            android:id="@+id/groupKakusan"
+            android:layout_width="183dp"
+            android:layout_height="234dp"
+            android:layout_marginStart="105dp"
+            app:layout_constraintStart_toEndOf="@+id/textKakusan"
+            tools:layout_editor_absoluteY="271dp">
+
+            <RadioButton
+                android:id="@+id/radioKakusan1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SF6"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioKakusan2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SF7"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioKakusan3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SF8"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioKakusan4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SF9"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioKakusan5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SF10"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioKakusan6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SF11"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioKakusan7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SF12"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/groupTaiiki"
+            android:layout_width="199dp"
+            android:layout_height="102dp"
+            tools:layout_editor_absoluteX="200dp"
+            tools:layout_editor_absoluteY="528dp">
+
+            <RadioButton
+                android:id="@+id/radioTaiiki1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BW125"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioTaiiki2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BW250"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioTaiiki3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BW500"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/groupSokudo"
+            android:layout_width="199dp"
+            android:layout_height="107dp"
+            tools:layout_editor_absoluteX="200dp"
+            tools:layout_editor_absoluteY="649dp">
+
+            <RadioButton
+                android:id="@+id/radioSokudo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50 Kbps"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioSokudo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100 Kbps"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioSokudo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="200 Kbps"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/groupWhite"
+            android:layout_width="184dp"
+            android:layout_height="74dp"
+            tools:layout_editor_absoluteX="200dp"
+            tools:layout_editor_absoluteY="766dp">
+
+            <RadioButton
+                android:id="@+id/radioWhite1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioWhite2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="不使用"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
