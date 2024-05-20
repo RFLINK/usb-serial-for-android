@@ -157,7 +157,7 @@ public class DevicesFragment extends ListFragment {
             args.putBoolean("withIoManager", withIoManager);
             Fragment fragment = new TerminalFragment();
             fragment.setArguments(args);
-            getFragmentManager().beginTransaction().replace(R.id.fragment, fragment, "terminal").addToBackStack(null).commit();
+            //getFragmentManager().beginTransaction().replace(R.id.fragment, fragment, "terminal").addToBackStack(null).commit();
         }
     }
 
